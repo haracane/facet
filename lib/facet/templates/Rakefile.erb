@@ -14,13 +14,13 @@ require "rake"
 require "jeweler"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "facet"
-  gem.homepage = "http://github.com/haracane/facet"
+  gem.name = "<%=@project_name%>"
+  gem.homepage = "http://github.com/<%=@github_user%>/<%=@project_name%>"
   gem.license = "MIT"
-  gem.summary = "Helper for creating RubyGem project"
-  gem.description = "Helper for creating RubyGem project"
-  gem.email = "haracane@gmail.com"
-  gem.authors = ["Kenji Hara"]
+  gem.summary = "<%=@project_name%> gem"
+  gem.description = "<%=@project_name%> gem"
+  gem.email = "<%=@user_email%>"
+  gem.authors = ["<%=@user_name%>"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?("VERSION") ? File.read("VERSION") : ""
 
   rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "facet #{version}"
+  rdoc.title = "<%=@project_name%> #{version}"
   rdoc.rdoc_files.include("README*")
   rdoc.rdoc_files.include("lib/**/*.rb")
 end
