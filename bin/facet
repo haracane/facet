@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "facet"
+
+exit_code = Facet::Command::Build.run(ARGV) || 0
+
+exit exit_code
