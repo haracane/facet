@@ -9,7 +9,7 @@ end
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require "rspec"
-require "facet"
+require "<%=@project_name%>"
 require "tempfile"
 
 # Requires supporting files with custom matchers and macros, etc,
@@ -20,19 +20,21 @@ RSpec.configure do |config|
   
 end
 
-module Facet
-  FACET_HOME = File.expand_path(File.dirname(__FILE__) + "/..")
-  BIN_DIR = "#{FACET_HOME}/bin"
-  LIB_DIR = "#{FACET_HOME}/lib"
+module <%=@module_name%>
+  <%=@project_name_upcase%>_HOME = File.expand_path(File.dirname(__FILE__) + "/..")
+  BIN_DIR = "#{<%=@project_name_upcase%>_HOME}/bin"
+  LIB_DIR = "#{<%=@project_name_upcase%>_HOME}/lib"
   RUBY_CMD = "/usr/bin/env ruby -I #{LIB_DIR}"
-  REDIRECT = {:stderr=>"2> /dev/null"}
+  REDIRECT = {}
 end
 
-Facet.logger = Logger.new(STDERR)
-if File.exist?('/tmp/facet.debug') then
-  Facet.logger.level = Logger::DEBUG
-  Facet::REDIRECT[:stderr] = nil
+<%=@module_name%>.logger = Logger.new(STDERR)
+if File.exist?('/tmp/<%=@project_name%>.debug') then
+  <%=@module_name%>.logger.level = Logger::DEBUG
+  <%=@module_name%>::REDIRECT[:stdout] = nil
+  <%=@module_name%>::REDIRECT[:stderr] = nil
 else
-  Facet.logger.level = Logger::ERROR
-  Facet::REDIRECT[:stderr] = "2> /dev/null"
+  <%=@module_name%>.logger.level = Logger::ERROR
+  <%=@module_name%>::REDIRECT[:stdout] = "> /dev/null"
+  <%=@module_name%>::REDIRECT[:stderr] = "2> /dev/null"
 end
