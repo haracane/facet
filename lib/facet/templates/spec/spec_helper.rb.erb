@@ -25,14 +25,16 @@ module <%=@module_name%>
   BIN_DIR = "#{<%=@project_name_upcase%>_HOME}/bin"
   LIB_DIR = "#{<%=@project_name_upcase%>_HOME}/lib"
   RUBY_CMD = "/usr/bin/env ruby -I #{LIB_DIR}"
-  REDIRECT = {:stderr=>"2> /dev/null"}
+  REDIRECT = {}
 end
 
 <%=@module_name%>.logger = Logger.new(STDERR)
 if File.exist?('/tmp/<%=@project_name%>.debug') then
   <%=@module_name%>.logger.level = Logger::DEBUG
+  <%=@module_name%>::REDIRECT[:stdout] = nil
   <%=@module_name%>::REDIRECT[:stderr] = nil
 else
   <%=@module_name%>.logger.level = Logger::ERROR
+  <%=@module_name%>::REDIRECT[:stdout] = "> /dev/null"
   <%=@module_name%>::REDIRECT[:stderr] = "2> /dev/null"
 end
