@@ -24,13 +24,13 @@ describe "bin/facet" do
         
         FileTest.exists?("coverage").should be_true
       }
-        
-      Dir.chdir("facet_test"){
-        result = system("rake ci:setup:rspec spec #{@stdout_redirect} #{@stderr_redirect}")
-        result.should be_true
-
-        FileTest.exists?("spec/reports").should be_true
-      }
+      
+      # Dir.chdir("facet_test"){
+        # result = system("rake ci:setup:rspec spec #{@stdout_redirect} #{@stderr_redirect}")
+        # result.should be_true
+# 
+        # FileTest.exists?("spec/reports").should be_true
+      # }
     }
   end
 end
