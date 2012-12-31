@@ -41,7 +41,6 @@ module Facet
           ".rspec",
           "Gemfile",
           "LICENSE.txt",
-          "README.md",
           "README.rdoc",
           "Rakefile",
           "lib/project.rb",

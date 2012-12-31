@@ -18,14 +18,12 @@ describe "bin/facet" do
         result = system("rake spec spec:rcov #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
         
-        result = FileTest.exists?("/tmp/facet_test/coverage/rcov")
-        result.should be_true
+        FileTest.exists?("/tmp/facet_test/coverage").should be_true
         
         result = system("rake ci:setup:rspec spec #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
 
-        result = FileTest.exists?("/tmp/facet_test/spec/reports")
-        result.should be_true
+        FileTest.exists?("/tmp/facet_test/spec/reports").should be_true
       }
     }
   end
