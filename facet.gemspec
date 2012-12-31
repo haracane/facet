@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "facet"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenji Hara"]
-  s.date = "2012-12-30"
+  s.date = "2012-12-31"
   s.description = "Helper for creating RubyGem project"
   s.email = "haracane@gmail.com"
   s.executables = ["facet"]
@@ -41,13 +41,14 @@ Gem::Specification.new do |s|
     "lib/facet/templates/lib/project.rb.erb",
     "lib/facet/templates/spec/lib/project_spec.rb.erb",
     "lib/facet/templates/spec/spec_helper.rb.erb",
+    "spec/bin/facet_spec.rb",
     "spec/lib/facet_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/haracane/facet"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.23"
+  s.rubygems_version = "1.8.24"
   s.summary = "Helper for creating RubyGem project"
 
   if s.respond_to? :specification_version then
