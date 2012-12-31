@@ -21,6 +21,8 @@ module Facet
         end
         
         @project_name = argv.shift
+        @module_name = Facet.to_camel_case(@project_name)
+        @project_name_upcase = @project_name.upcase
         
         [
           @project_name,

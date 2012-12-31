@@ -25,14 +25,16 @@ module Facet
   BIN_DIR = "#{FACET_HOME}/bin"
   LIB_DIR = "#{FACET_HOME}/lib"
   RUBY_CMD = "/usr/bin/env ruby -I #{LIB_DIR}"
-  REDIRECT = {:stderr=>"2> /dev/null"}
+  REDIRECT = {}
 end
 
 Facet.logger = Logger.new(STDERR)
 if File.exist?('/tmp/facet.debug') then
   Facet.logger.level = Logger::DEBUG
+  Facet::REDIRECT[:stdout] = nil
   Facet::REDIRECT[:stderr] = nil
 else
   Facet.logger.level = Logger::ERROR
+  Facet::REDIRECT[:stdout] = "> /dev/null"
   Facet::REDIRECT[:stderr] = "2> /dev/null"
 end

@@ -5,6 +5,10 @@ require "facet/command/build"
 module Facet
   TEMPLATES_DIR = File.expand_path(File.join(File.dirname(__FILE__), "facet", "templates"))
   
+  def self.to_camel_case(str)
+    return str.split('_').map{|word| word.capitalize}.join
+  end
+  
   def self.get_column(client, column_family, super_column, key, options={})
     return Priam::Core::Get.get_column(client, column_family, super_column, key, options)
   end
