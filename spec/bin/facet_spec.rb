@@ -7,23 +7,27 @@ describe "bin/facet" do
   end
   
   it "should create valid gem template" do
-    Dir.chdir("/tmp"){
+    work_dir = "/tmp/#{ENV["USER"]}"
+    if ! FileTest.exists?(work_dir)
+      Dir.mkdir(work_dir)
+    end
+    Dir.chdir(work_dir){
       if FileTest.exists?("facet_test")
         result = system("rm -rf facet_test")
         result.should be_true
       end
-      result = system("#{Facet::RUBY_CMD} -I #{Facet::LIB_DIR} #{Facet::BIN_DIR}/facet facet_test #{@stdout_redirect} #{@stderr_redirect}")
+      result = system("#{Facet::RUBY_CMD} #{Facet::BIN_DIR}/facet facet_test #{@stdout_redirect} #{@stderr_redirect}")
       result.should be_true
-      Dir.chdir("/tmp/facet_test"){
+      Dir.chdir("#{work_dir}/facet_test"){
         result = system("rake spec spec:rcov #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
         
-        FileTest.exists?("/tmp/facet_test/coverage").should be_true
+        FileTest.exists?("coverage").should be_true
         
         result = system("rake ci:setup:rspec spec #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
 
-        FileTest.exists?("/tmp/facet_test/spec/reports").should be_true
+        FileTest.exists?("spec/reports").should be_true
       }
     }
   end
