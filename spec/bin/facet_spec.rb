@@ -16,7 +16,7 @@ describe "bin/facet" do
         result = system("rm -rf facet_test")
         result.should be_true
       end
-      result = system("#{Facet::RUBY_CMD} #{Facet::BIN_DIR}/facet facet_test #{@stdout_redirect} #{@stderr_redirect}")
+      result = system("#{Facet::RUBY_CMD} #{Facet::BIN_DIR}/facet --test facet_test #{@stdout_redirect} #{@stderr_redirect}")
       result.should be_true
       Dir.chdir("#{work_dir}/facet_test"){
         result = system("rake spec spec:rcov #{@stdout_redirect} #{@stderr_redirect}")
