@@ -1,9 +1,17 @@
-= facet
+= Facet
 
-'facet' is a scaffold generator for starting new RubyGem projects based on {Jeweler}[https://github.com/technicalpickles/jeweler].
+Facet is a RubyGem project support tool.
+Faset mainly supports:
+* RubyGem management and release based on {Jeweler}[https://github.com/technicalpickles/jeweler]
+* RubyGem scaffold generation based on {Jeweler}[https://github.com/technicalpickles/jeweler]
+* Behaviour driven development with RSpec
+* Continuous integration with Jenkins by providing:
+ * Source code analysis with Flog
+ * Code coverage analysis with RCov(SimpleCov)
+ * CI report with CI::Reporter
 
 == Supported Ruby versions and implementations
-facet should work identically on:
+Facet should work identically on:
 
 * Ruby 1.9.3
 * Ruby 1.9.2
@@ -46,9 +54,6 @@ This task also measure the code coverage in Ruby 1.9.2/1.9.3.
 
 === release gem to RubyGems.org
  $ rake release
- 
-=== CI reporting
- $ rake ci:setup:rspec spec
 
 === Other
 
@@ -56,7 +61,7 @@ Rake tasks are based on {Jeweler}[https://github.com/technicalpickles/jeweler].
 
 You can get more information from {github.com/technicalpickles/jeweler}[https://github.com/technicalpickles/jeweler].
 
-== Contributing to facet
+== Contributing to Facet
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
