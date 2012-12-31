@@ -4,11 +4,11 @@ Facet is a RubyGem project support tool.
 Faset mainly supports:
 * RubyGem management and release based on {Jeweler}[https://github.com/technicalpickles/jeweler]
 * RubyGem scaffold generation based on {Jeweler}[https://github.com/technicalpickles/jeweler]
-* Behaviour driven development with RSpec
+* Behaviour driven development with {RSpec}[https://github.com/dchelimsky/rspec]
 * Continuous integration with Jenkins by providing:
-  * Source code analysis with Flog
-  * Code coverage analysis with RCov(SimpleCov)
-  * CI report with CI::Reporter
+  * Source code analysis with {Flog}[https://github.com/seattlerb/flog]
+  * Code coverage analysis with {RCov}[https://github.com/relevance/rcov]({SimpleCov}[https://github.com/colszowka/simplecov])
+  * CI report with {CI::Reporter}[https://github.com/nicksieger/ci_reporter]
 
 == Supported Ruby versions and implementations
 Facet should work identically on:
