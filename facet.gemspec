@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "facet"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenji Hara"]
@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.executables = ["facet"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.md",
     "README.rdoc"
   ]
   s.files = [
@@ -23,7 +22,6 @@ Gem::Specification.new do |s|
     ".rspec",
     "Gemfile",
     "LICENSE.txt",
-    "README.md",
     "README.rdoc",
     "Rakefile",
     "VERSION",
@@ -35,7 +33,6 @@ Gem::Specification.new do |s|
     "lib/facet/templates/.rspec.erb",
     "lib/facet/templates/Gemfile.erb",
     "lib/facet/templates/LICENSE.txt.erb",
-    "lib/facet/templates/README.md.erb",
     "lib/facet/templates/README.rdoc.erb",
     "lib/facet/templates/Rakefile.erb",
     "lib/facet/templates/lib/project.rb.erb",
@@ -59,16 +56,14 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_development_dependency(%q<simplecov>, [">= 0"])
-      s.add_development_dependency(%q<simplecov-rcov>, [">= 0"])
+      s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<ci_reporter>, [">= 1.7.0"])
     else
       s.add_dependency(%q<rspec>, [">= 2.8.0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, [">= 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-      s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<simplecov-rcov>, [">= 0"])
+      s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<ci_reporter>, [">= 1.7.0"])
     end
   else
@@ -76,8 +71,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, [">= 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
-    s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<simplecov-rcov>, [">= 0"])
+    s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<ci_reporter>, [">= 1.7.0"])
   end
 end
