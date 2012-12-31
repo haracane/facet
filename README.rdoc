@@ -7,7 +7,7 @@ Faset mainly supports:
 * Behaviour driven development with {RSpec}[https://github.com/dchelimsky/rspec]
 * Continuous integration with Jenkins by providing:
   * Source code analysis with {Flog}[https://github.com/seattlerb/flog]
-  * Code coverage analysis with {RCov}[https://github.com/relevance/rcov]({SimpleCov}[https://github.com/colszowka/simplecov])
+  * Code coverage analysis with {RCov}[https://github.com/relevance/rcov] ({SimpleCov}[https://github.com/colszowka/simplecov])
   * CI report with {CI::Reporter}[https://github.com/nicksieger/ci_reporter]
 
 == Supported Ruby versions and implementations
