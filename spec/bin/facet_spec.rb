@@ -18,12 +18,14 @@ describe "bin/facet" do
       end
       result = system("#{Facet::RUBY_CMD} #{Facet::BIN_DIR}/facet --test facet_test #{@stdout_redirect} #{@stderr_redirect}")
       result.should be_true
-      Dir.chdir("#{work_dir}/facet_test"){
+      Dir.chdir("facet_test"){
         result = system("rake spec spec:rcov #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
         
         FileTest.exists?("coverage").should be_true
+      }
         
+      Dir.chdir("facet_test"){
         result = system("rake ci:setup:rspec spec #{@stdout_redirect} #{@stderr_redirect}")
         result.should be_true
 
