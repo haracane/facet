@@ -17,4 +17,5 @@ group :development do
     gem "simplecov-rcov", ">= 0"
   end
   gem "ci_reporter", ">= 1.7.0"
+  gem "flog", ">= 3.2.0"
 end
