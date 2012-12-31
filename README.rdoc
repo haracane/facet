@@ -6,9 +6,9 @@ Faset mainly supports:
 * RubyGem scaffold generation based on {Jeweler}[https://github.com/technicalpickles/jeweler]
 * Behaviour driven development with RSpec
 * Continuous integration with Jenkins by providing:
- * Source code analysis with Flog
- * Code coverage analysis with RCov(SimpleCov)
- * CI report with CI::Reporter
+  * Source code analysis with Flog
+  * Code coverage analysis with RCov(SimpleCov)
+  * CI report with CI::Reporter
 
 == Supported Ruby versions and implementations
 Facet should work identically on:
