@@ -21,9 +21,9 @@ RSpec.configure do |config|
 end
 
 module <%=@module_name%>
-  <%=@project_name_upcase%>_HOME = File.expand_path(File.dirname(__FILE__) + "/..")
-  BIN_DIR = "#{<%=@project_name_upcase%>_HOME}/bin"
-  LIB_DIR = "#{<%=@project_name_upcase%>_HOME}/lib"
+  <%=@project_name.upcase%>_HOME = File.expand_path(File.dirname(__FILE__) + "/..")
+  BIN_DIR = "#{<%=@project_name.upcase%>_HOME}/bin"
+  LIB_DIR = "#{<%=@project_name.upcase%>_HOME}/lib"
   RUBY_CMD = "/usr/bin/env ruby -I #{LIB_DIR}"
   REDIRECT = {}
 end

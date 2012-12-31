@@ -2,19 +2,35 @@ module Facet
   module Command
     module Build
       def self.run(argv)
-        @user_name = `/usr/bin/env git config --get user.name`
+        @user_name = `/usr/bin/env git config --get user.name`.chomp
+        @user_email = `/usr/bin/env git config --get user.email`.chomp
+        @github_user = `/usr/bin/env git config --get github.user`.chomp
+
+        next_argv = []
+        while 0 < argv.length
+          val = argv.shift
+          case val
+          when "--test"
+            @user_name = "Test User"
+            @user_email = "test@mail.com"
+            @github_user = "testuser"
+          else
+            next_argv.push val 
+          end
+        end
+        
+        argv = next_argv
+        
         if @user_name == ""
           STDERR.puts "ERROR: user.name is not set in git config"
           return 1
         end
         
-        @user_email = `/usr/bin/env git config --get user.email`
         if @user_email == ""
           STDERR.puts "ERROR: user.email is not set in git config"
           return 1
         end
         
-        @github_user = `/usr/bin/env git config --get github.user`
         if @github_user == ""
           STDERR.puts "ERROR: github.user is not set in git config"
           return 1
@@ -22,7 +38,6 @@ module Facet
         
         @project_name = argv.shift
         @module_name = Facet.to_camel_case(@project_name)
-        @project_name_upcase = @project_name.upcase
         
         [
           @project_name,
