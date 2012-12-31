@@ -24,7 +24,7 @@ module Facet
   FACET_HOME = File.expand_path(File.dirname(__FILE__) + "/..")
   BIN_DIR = "#{FACET_HOME}/bin"
   LIB_DIR = "#{FACET_HOME}/lib"
-  RUBY_CMD = "/usr/bin/env ruby -I #{LIB_DIR}"
+  RUBY_CMD = "ruby -I #{LIB_DIR}"
   REDIRECT = {}
 end
 
