@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "facet"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenji Hara"]
-  s.date = "2013-01-01"
+  s.date = "2013-01-02"
   s.description = "Helper for creating RubyGem project"
   s.email = "haracane@gmail.com"
   s.executables = ["facet"]
@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
     "lib/facet/templates/LICENSE.txt.erb",
     "lib/facet/templates/README.rdoc.erb",
     "lib/facet/templates/Rakefile.erb",
+    "lib/facet/templates/bin/project.erb",
     "lib/facet/templates/lib/project.rb.erb",
     "lib/facet/templates/spec/lib/project_spec.rb.erb",
     "lib/facet/templates/spec/spec_helper.rb.erb",
