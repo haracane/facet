@@ -41,6 +41,7 @@ module Facet
         
         [
           @project_name,
+          "#{@project_name}/bin",
           "#{@project_name}/lib",
           "#{@project_name}/spec",
           "#{@project_name}/spec/lib"
@@ -58,6 +59,7 @@ module Facet
           "LICENSE.txt",
           "README.rdoc",
           "Rakefile",
+          "bin/project",
           "lib/project.rb",
           "spec/spec_helper.rb",
           "spec/lib/project_spec.rb",
@@ -86,6 +88,9 @@ module Facet
             STDOUT.puts "created #{dest_path}"
           end
         end
+        
+        File.chmod(0755, "#{@project_name}/bin/#{@project_name}")
+        
         return 0
       end
     end
