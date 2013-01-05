@@ -1,65 +1,6 @@
 = Facet
 
-Facet is a RubyGem project support tool.
-Faset mainly supports:
-* RubyGem management and release based on {Jeweler}[https://github.com/technicalpickles/jeweler]
-* RubyGem scaffold generation based on {Jeweler}[https://github.com/technicalpickles/jeweler]
-* Behaviour driven development with {RSpec}[https://github.com/dchelimsky/rspec]
-* Continuous integration with Jenkins by providing:
-  * Source code analysis with {Flog}[https://github.com/seattlerb/flog]
-  * Code coverage analysis with {RCov}[https://github.com/relevance/rcov] ({SimpleCov}[https://github.com/colszowka/simplecov])
-  * CI report with {CI::Reporter}[https://github.com/nicksieger/ci_reporter]
-
-== Supported Ruby versions and implementations
-Facet should work identically on:
-
-* Ruby 1.9.3
-* Ruby 1.9.2
-* Ruby 1.8.7
-
-== Install
-
-You can install facet by gem.
- gem install facet
-
-== Usage
-
-=== scaffold new RubyGem project
- $ facet hello-gem
-
-=== run rspec
- $ rake spec
-This task also measure the code coverage in Ruby 1.9.2/1.9.3.
-
-=== measure the code coverage(Ruby 1.8.7)
- $ rake spec:rcov
- 
-=== output CI reports
- $ rake ci:setup:rspec spec
-
-=== set gem version
- $ rake version:write MAJOR=0 MINOR=1 PATCH=0
-
-=== increment major version
- $ rake version:bump:major
-
-=== increment minor version
- $ rake version:bump:minor
-
-=== increment patch version
- $ rake version:bump:patch
-
-=== build gem
- $ rake build
-
-=== release gem to RubyGems.org
- $ rake release
-
-=== Other
-
-Rake tasks are based on {Jeweler}[https://github.com/technicalpickles/jeweler].
-
-You can get more information from {github.com/technicalpickles/jeweler}[https://github.com/technicalpickles/jeweler].
+Facet is renamed to {Lapidary}[https://github.com/haracane/lapidary]
 
 == Contributing to Facet
  
@@ -75,4 +16,3 @@ You can get more information from {github.com/technicalpickles/jeweler}[https://
 
 Copyright (c) 2012 Kenji Hara. See LICENSE.txt for
 further details.
-
